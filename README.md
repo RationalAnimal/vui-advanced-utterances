@@ -162,10 +162,12 @@ unfoldIntentUtteranceStrings() function, passing to it the name of the Intent
 and the array of utterances to be unfolded.
 
 ````javascript
+var utterances = require("vui-advanced-utterances");
+var platforms = require("vui-platforms");
 var app = {};
 utterances.addUtterancesToApp(app);
 
-var result = app.unfoldIntentUtteranceStrings("SampleIntent", ["simple one liner", "simple string with an option list that has {my|option|list} in it"]);
+var result = app.unfoldIntentUtteranceStrings("SampleIntent", ["simple one liner", "simple string with an option list that has {my|option|list} in it"], platforms.ALEXA);
 console.log(result);
 ````
 will produce:
