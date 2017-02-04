@@ -38,10 +38,10 @@ utterances.addUtterancesToApp = function(app){
   * javascript code.  Simple examples would be a variable name or a literal
   * string or literal array.
   * @param {string} utterance - the utterance to "unfold".
-  * @param {object} app - the app that has had custom slot functionality added
-  * to it.  This is only needed it the utterance contains {+XXX} in it.
   */
-  app.unfoldUtteranceString = utterance_helper.unfoldUtteranceString;
+  app.unfoldUtteranceString = function(utterance){
+    return utterance_helper.unfoldUtteranceString(utterance, this);
+  }
 
   /**
   * Call this function to export utterances for a particular platform and a
@@ -49,9 +49,9 @@ utterances.addUtterancesToApp = function(app){
   * @param {string} intent - intent name
   * @param {array} utterances - string array of utterances
   * @param {string} platform - platform name, found in vui-platforms module
-  * @param {object} app - the app that has had custom slot functionality added
-  * to it.  This is only needed it any of the utterances contain {+XXX} in it.
   */
-  app.exportIntentUtteranceStrings = utterance_helper.exportIntentUtteranceStrings;
+  app.exportIntentUtteranceStrings = function(intentName, utterances, platform){
+    return utterance_helper.exportIntentUtteranceStrings(intentName, utterances, platform, this);
+  }
 }
 module.exports = utterances;

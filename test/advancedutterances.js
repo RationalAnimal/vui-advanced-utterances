@@ -123,6 +123,7 @@ describe("vui-advanced-utterances", function() {
   describe("exportIntentUtteranceStrings", function() {
     var app = {};
     utterances.addUtterancesToApp(app);
+    synonyms.addSynonymsToApp(app);
 
     it("verify that we are getting back the correct result when exporting to Alexa and the input is an array of a simple string and an option list inside a simple string", function() {
       var result = app.exportIntentUtteranceStrings("SampleIntent", ["simple one liner", "simple string with an option list that has {my|option|list} in it"], platforms.ALEXA);
