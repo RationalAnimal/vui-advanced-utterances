@@ -160,6 +160,28 @@ option 3
 {Option4Slot}
 ````
 
+## Validate utterances
+You can validate your utterances by calling
+
+````javascript
+var app = {};
+utterances.addUtterancesToApp(app);
+synonyms.addSynonymsToApp(app);
+
+var result = app.validateUtterances(["simple one liner", "simple string with an option list that has {my|option|list} in it"]);
+console.log(result);
+
+result = app.validateUtterances(["simple one liner", "simple string with an option list that has {my|option|list} in it", "simple one liner"]);
+console.log(result);
+````
+will produce:
+
+````javascript
+true
+utterances contain duplicates, e.g.: simple one liner
+false
+````
+
 ## Intent utterances
 To generate the text suitable for uploading to Alexa development console use
 unfoldIntentUtteranceStrings() function, passing to it the name of the Intent

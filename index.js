@@ -53,5 +53,13 @@ utterances.addUtterancesToApp = function(app){
   app.exportIntentUtteranceStrings = function(intentName, utterances, platform){
     return utterance_helper.exportIntentUtteranceStrings(intentName, utterances, platform, this);
   }
+
+  /**
+  * Call this function to validate utterances.
+  * @param {array} utterances - string array of utterances
+  */
+  app.validateUtterances = function(utterances){
+    return utterance_helper.validateUtterances(utterances, this);
+  }
 }
 module.exports = utterances;

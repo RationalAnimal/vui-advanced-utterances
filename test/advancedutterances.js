@@ -135,6 +135,21 @@ describe("vui-advanced-utterances", function() {
     });
   });
 
+  describe("validateUtterances", function() {
+    var app = {};
+    utterances.addUtterancesToApp(app);
+    synonyms.addSynonymsToApp(app);
+
+    it("verify that we are correctly identifying valid utterances", function() {
+      var result = app.validateUtterances(["simple one liner", "simple string with an option list that has {my|option|list} in it"]);
+      expect(result).to.equal(true);
+    });
+    it("verify that we are correctly identifying invalid duplicate utterances", function() {
+      var result = app.validateUtterances(["simple one liner", "simple string with an option list that has {my|option|list} in it", "simple one liner"]);
+      expect(result).to.equal(false);
+    });
+  });
+
   describe("cartesianProduct", function() {
     var array1 = [];
     var array2 = [];

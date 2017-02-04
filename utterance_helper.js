@@ -29,6 +29,39 @@ var utterance_helper = {};
 utterance_helper.randomTags = [];
 utterance_helper.tagValues = [];
 
+utterance_helper.validateUtterances = function(utterances, app){
+  if(typeof utterances == "undefined"){
+    console.log("utterances argument is undefined");
+    return false;
+  }
+  if(typeof utterances == "string"){
+    utterances = [utterances];
+  }
+  if(Array.isArray(utterances)){
+    var result = [];
+    for(var i = 0; i < utterances.length; i++){
+      var scratch = utterance_helper.unfoldUtteranceString(utterances[i], app);
+      if(Array.isArray(scratch)){
+        for(var j = 0; j < scratch.length; j++){
+          result.push(scratch[j]);
+        }
+      }
+      else {
+        result.push(scratch);
+      }
+    }
+    result.sort();
+    for(var i = 0; i < result.length - 1; i++){
+      if(result[i] == result[i+1]){
+        console.log("utterances contain duplicates, e.g.: " + result[i]);
+        return false;
+      }
+    }
+  }
+
+  return true;
+}
+
 utterance_helper.unfoldUtteranceString = function(utterance, app){
   utterance_helper.randomTags = [];
   utterance_helper.tagValues = [];
