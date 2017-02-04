@@ -2,6 +2,10 @@
 
 npm module that provides ability to add VUI utterance generation functionality to any javascript object.
 
+# Repository
+This module as well as related vui modules can be found here:
+https://github.com/RationalAnimal
+
 # Installation
 
 ```shell
