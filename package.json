@@ -1,0 +1,33 @@
+{
+  "name": "vui-advanced-utterances",
+  "version": "1.0.0",
+  "description": "Advanced utterances for VUI applications.  Supports hierarchical alternatives, unfolding, and duplicate detection. Uses vui-custom-values-with-synonyms npm package. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test"
+  },
+  "author": "Ilya Shubentsov",
+  "copyright": "Copyright 2017 Ilya Shubentsov",
+  "license": "MIT",
+  "dependencies": {
+    "vui-custom-values-with-synonyms": "^1.1.0",
+    "vui-platforms": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "express": "^4.14.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0"
+  },
+  "keywords": [
+    "vui",
+    "alexa",
+    "utterance",
+    "utterances",
+    "unfolding",
+    "custom slot",
+    "vui-platforms",
+    "vui-custom-values-with-synonyms",
+    "vui-advanced-utterances"
+  ]
+}
