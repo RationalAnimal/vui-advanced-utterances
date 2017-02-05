@@ -41,7 +41,7 @@ describe("vui-advanced-utterances", function() {
       expect(app.unfoldUtteranceString("simple string {SampleSlot} in it")).to.equal("simple string {SampleSlot} in it");
     });
 
-    app.addCustomSlotType("fruit",
+    app.addCustomInputType("fruit",
     	{values: [
     		{
     			text: "apple"
@@ -56,7 +56,7 @@ describe("vui-advanced-utterances", function() {
     	]}
     );
 
-    it("verify that we are getting back the correct result when the input has custom slot type inside a simple string", function() {
+    it("verify that we are getting back the correct result when the input has custom input type inside a simple string", function() {
       var result = app.unfoldUtteranceString("simple string containing {+fruit} in it", app);
       expect(result.length).to.equal(3);
       expect(result[0]).to.equal("simple string containing apple in it");
