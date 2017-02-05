@@ -72,7 +72,7 @@ utterance_helper.unfoldUtteranceString = function(utterance, app){
   replaceResult = currentString.replace(/\{\=[^\{\}\|\+]+\}/g, utterance_helper._replacerIdentifier);
   currentString = replaceResult;
 
-  replaceResult = currentString.replace(/\{\+[^\{\}\|\=]+\}/g, utterance_helper._replacerCustomSlot);
+  replaceResult = currentString.replace(/\{\+[^\{\}\|\=]+\}/g, utterance_helper._replacerCustomSlotType);
   currentString = replaceResult;
 
   replaceResult = currentString.replace(/\{[^\{\}]+\}/g, utterance_helper._replacerOptionList);
@@ -123,7 +123,7 @@ utterance_helper._replaceCustonTypesWithValues = function(app) {
       var customTypeName = scratchValue.substring(2, scratchValue.length - 1);
       // Trim leading and trailing spaces
       customTypeName = customTypeName.trim();
-      var customTypeValues = app.getCustomSlotValues(customTypeName);
+      var customTypeValues = app.getCustomSlotTypeValues(customTypeName);
       utterance_helper.tagValues[i] = customTypeValues;
     }
   }
@@ -136,7 +136,7 @@ utterance_helper._replacerSlot = function(match, offset, string) {
   return tag;
 }
 
-utterance_helper._replacerCustomSlot = function(match, offset, string) {
+utterance_helper._replacerCustomSlotType = function(match, offset, string) {
   var tag = utterance_helper._generateNewTagName();
   utterance_helper.randomTags.push(tag);
   utterance_helper.tagValues.push(match);

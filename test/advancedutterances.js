@@ -41,7 +41,7 @@ describe("vui-advanced-utterances", function() {
       expect(app.unfoldUtteranceString("simple string {SampleSlot} in it")).to.equal("simple string {SampleSlot} in it");
     });
 
-    app.addCustomSlot("fruit",
+    app.addCustomSlotType("fruit",
     	{values: [
     		{
     			text: "apple"

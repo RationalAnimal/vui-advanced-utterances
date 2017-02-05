@@ -1,6 +1,6 @@
 {
   "name": "vui-advanced-utterances",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Advanced utterances for VUI applications.  Supports hierarchical alternatives, unfolding, and duplicate detection. Uses vui-custom-values-with-synonyms npm package. ",
   "main": "index.js",
   "scripts": {
@@ -10,11 +10,11 @@
   "copyright": "Copyright 2017 Ilya Shubentsov",
   "license": "MIT",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/RationalAnimal/vui-advanced-utterances"
+    "type": "git",
+    "url": "https://github.com/RationalAnimal/vui-advanced-utterances"
   },
   "dependencies": {
-    "vui-custom-values-with-synonyms": "^1.1.2",
+    "vui-custom-values-with-synonyms": "^3.0.0",
     "vui-platforms": "^1.0.2"
   },
   "devDependencies": {
