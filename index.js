@@ -26,6 +26,11 @@ var utterances = {};
 var utterance_helper = require("./utterance_helper.js");
 
 utterances.addUtterancesToApp = function(app){
+  if(app.utterancesAlreadyAdded == true){
+    return;
+  }
+  app.utterancesAlreadyAdded = true;
+
   /**
   * Call this function to parse the string containing various embedded elements.
   * Here are the currently supported elements:
